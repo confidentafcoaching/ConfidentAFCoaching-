@@ -131,7 +131,7 @@ section{padding-block:80px}
 @media (max-width:980px){.coaches{grid-template-columns:1fr;max-width:560px;margin-inline:auto}}
 
 /* offers */
-.offers{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;align-items:start}
+.offers{display:grid;grid-template-columns:minmax(0,640px);justify-content:center;gap:22px}
 .offers > *{min-width:0}
 .member{background:var(--grad);border-radius:30px;padding:34px;color:var(--white);display:grid;gap:18px;text-align:center;box-shadow:0 28px 60px -26px rgba(210,56,90,.7)}
 .member h3{color:var(--white);font-size:clamp(1.8rem,4vw,2.4rem)}
@@ -151,7 +151,13 @@ section{padding-block:80px}
 .offer ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;font-size:.95rem}
 .offer li{padding-left:20px;position:relative}
 .offer li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--rose)}
-@media (max-width:880px){.offers{grid-template-columns:1fr}}
+.coach-cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;margin-top:56px}
+.coach-col{display:grid;gap:22px;min-width:0}
+.coach-col .yoga-grid img{aspect-ratio:2/3}
+.col-label{text-align:center;font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.2rem);text-transform:uppercase;color:#111111;line-height:1}
+.col-label span{color:var(--hot)}
+.cycle-wrap{max-width:640px;margin:26px auto 0}
+@media (max-width:880px){.coach-cols{grid-template-columns:1fr;gap:48px}}
 
 /* retreat */
 .retreat-photos{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:repeat(2,200px);gap:14px;margin-bottom:22px}
@@ -199,7 +205,7 @@ section{padding-block:80px}
 .yoga-big{gap:16px}
 .yoga-big img{border-radius:22px}
 @media (max-width:600px){.yoga-big{grid-template-columns:1fr 1fr}.yoga-big img:last-child{grid-column:1/-1;aspect-ratio:4/3}}
-.side-photo{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:22px;display:block;box-shadow:0 20px 40px -24px rgba(150,40,90,.55)}
+.side-photo{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 28%;border-radius:22px;display:block;box-shadow:0 20px 40px -24px rgba(150,40,90,.55)}
 
 .retreat-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
 .retreat-gallery img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:20px;display:block;box-shadow:0 16px 32px -22px rgba(150,40,90,.55)}
@@ -279,7 +285,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap nav">
     <a class="logo" href="#top"><svg viewBox="0 0 40 32" aria-hidden="true"><path fill="currentColor" d="M4 26 2 8l10 8 8-13 8 13 10-8-2 18z"/><rect x="4" y="27.5" width="32" height="3.5" rx="1.5" fill="currentColor"/><circle cx="2" cy="7" r="2.2" fill="currentColor"/><circle cx="20" cy="2.6" r="2.4" fill="currentColor"/><circle cx="38" cy="7" r="2.2" fill="currentColor"/></svg>Confident <span>AF</span></a>
     <div class="nav-right">
-    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebLfa2_qOiATVPP3T1U9VKGv_PjCAhaeTEts5A-kUfsS_dAA/viewform" target="_blank" rel="noopener" style="padding:.7em 1.3em">Join for $111/mo</a>
+    <a class="btn" href="https://buy.stripe.com/eVq3cxfoG7ih5Lsbdg0Fi11" target="_blank" rel="noopener" style="padding:.7em 1.3em">Join for $111/mo</a>
     <div class="menu">
       <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu-panel" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
       <nav class="menu-panel" id="menu-panel" hidden>
@@ -305,11 +311,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <main id="top">
   <div class="wrap hero">
     <div>
-      <span class="pill"><b></b>Strength · Nutrition · Mind-body</span>
+      <span class="pill"><b></b>Strength · Nutrition · Mind &amp; body</span>
       <h1><span style="color:#111111">Build Your Dream Body &amp;</span> Step Into Your Full Power 👑</h1>
       <p class="lead">Welcome to the high-energy sisterhood where female empowerment meets real body transformations. Glow up from the inside out, toss doomscrolling aside, and join women elevating their entire lives!</p>
       <div class="ctas">
-        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebLfa2_qOiATVPP3T1U9VKGv_PjCAhaeTEts5A-kUfsS_dAA/viewform" target="_blank" rel="noopener">$111/mo · Claim your spot ✨</a>
+        <a class="btn" href="https://buy.stripe.com/eVq3cxfoG7ih5Lsbdg0Fi11" target="_blank" rel="noopener">$111/mo · Claim your spot ✨</a>
         <a class="btn ghost" href="#approach">Explore Collective 👑</a>
       </div>
     </div>
@@ -339,9 +345,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <article class="coach glass">
           <div class="photo"><img src="images/kat.jpg" alt="Kat taking a mirror selfie in the gym beside a rack of colorful bumper plates" style="object-position:50% 70%"></div>
           <div class="coach-body">
-            <p class="eyebrow">Coach · Strength &amp; mind-body</p>
+            <p class="eyebrow">Coach · Strength, mind &amp; body</p>
             <h3>Kat</h3>
-            <p>Kat moved to Austin from Dallas in 2024, just two weeks before starting her personal training certification courses. In 2025 she earned her certification, landed her first two gym jobs, and began taking her own clients. She joined Confident AF in the fall of 2026. Kat works with the nervous system, digestive system and endocrine system to give her clients and the team well-rounded mind-body coaching.</p>
+            <p>Kat moved to Austin from Dallas in 2024, just two weeks before starting her personal training certification courses. In 2025 she earned her certification, landed her first two gym jobs, and began taking her own clients. She joined Confident AF in the fall of 2026. Kat works with the nervous system, digestive system and endocrine system to give her clients and the team well-rounded coaching for the mind and body.</p>
             <div class="chips"><span>Certified personal trainer</span><span>Nervous system regulation</span><span>Somatic practices</span><span>Digestive health</span><span>Hormone health</span></div>
           </div>
         </article>
@@ -394,7 +400,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="feature glass">
           <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3v8M5 3v4a2 2 0 0 0 4 0V3M7 11v10M17 21V3c-2.2 0-3.5 2.5-3.5 6s1.2 4 3.5 4"/></svg></span>
           <h3 style="color:var(--hot)">Food Journal &amp; Recipes</h3>
-          <p>No strict or boring diets! Get an organized Confident AF food journal paired with <b class="pink">high-protein, delicious, easy-to-make recipes</b> that fuel your dream body.</p>
+          <p>No strict or boring diets! Get an organized Confident AF food journal paired with <b class="pink">delicious, high-protein recipes</b> that are easy to make and fuel your dream body.</p>
         </div>
       </div>
       <div class="peek">
@@ -507,75 +513,83 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
             <li><span><b>Monthly live yoga</b>Flow, reset and stretch together.</span></li>
             <li><span><b>Food journal &amp; recipes</b>Easy tracking and delicious meals.</span></li>
           </ul>
-          <a class="btn white" href="https://docs.google.com/forms/d/e/1FAIpQLSebLfa2_qOiATVPP3T1U9VKGv_PjCAhaeTEts5A-kUfsS_dAA/viewform" target="_blank" rel="noopener">$111/mo · Claim your spot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn white" href="https://buy.stripe.com/eVq3cxfoG7ih5Lsbdg0Fi11" target="_blank" rel="noopener">$111/mo · Claim your spot <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </article>
 
-        <div class="side">
-          <article class="offer glass">
-            <p class="eyebrow">Upgrade · with Sami</p>
-            <h3>VIP 1:1 Coaching</h3>
-            <ul>
-              <li>Individualized strength + nutrition</li>
-              <li>Private communication with Sami</li>
-              <li>Bi-weekly check-ins</li>
-              <li>Monthly VIP mindset coaching call</li>
-              <li>Programs that flex with life's demands, including travel</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply with Sami</a>
-          </article>
-          <img class="side-photo" src="images/sami-becoming.jpg" alt="Sami celebrating with both arms raised in a sparkly dress in front of a red curtain">
-          <article class="offer glass">
-            <p class="eyebrow">Upgrade · with Sami</p>
-            <h3>Authentic Frequency</h3>
-            <p>Sami's highest tier of 1:1 support: an add-on to VIP Coaching that goes deeper into energy work, subconscious reprogramming, and the dream life you're building.</p>
-            <ul>
-              <li>Audio access to Sami for life's ups and downs</li>
-              <li>Monthly "Clear the Fear" calls</li>
-              <li>Subconscious reprogramming and energy work</li>
-              <li>Nervous system regulation</li>
-              <li>Dream-life visioning with a simple system to track your goals</li>
-            </ul>
-            <p style="font-size:.92rem;font-weight:600;color:var(--hot);border-top:1px solid var(--line);padding-top:12px">👑 By application only. Spots are exclusive, and every client is accepted through a personal interview with Sami.</p>
-            <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for an interview</a>
-          </article>
-          <figure class="yoga">
-            <div class="yoga-grid">
-              <img src="images/kat-train-1.jpg" alt="Kat holding a headstand on a mat in the gym" style="object-position:50% 45%">
-              <img src="images/kat-train-2.jpg" alt="Kat doing a barbell split squat" style="object-position:50% 68%">
-              <img src="images/kat-train-4.jpg" alt="Kat throwing a peace sign in a gym mirror selfie on the mats" style="object-position:38% 55%">
-            </div>
-          </figure>
-          <article class="offer glass">
-            <p class="eyebrow">Upgrade · with Kat</p>
-            <h3>VIP 1:1 Coaching</h3>
-            <ul>
-              <li>Individual strength program, updated as you progress</li>
-              <li>Nutrition guidance built around your goals</li>
-              <li>Private communication with Kat</li>
-              <li>Bi-weekly check-ins and form feedback</li>
-              <li>Monthly VIP call</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for 1:1</a>
-          </article>
-          <article class="offer glass">
-            <p class="eyebrow">Add-on</p>
-            <h3>Mindset coaching</h3>
-            <p>Somatic-informed sessions to work through the blocks that keep you from showing up for yourself.</p>
-            <ul>
-              <li>Weekly 1:1 video calls with Kat</li>
-              <li>Somatic-informed nervous system regulation</li>
-              <li>Cognitive behavioral therapy (CBT)-informed coaching</li>
-            </ul>
-            <p style="font-size:.92rem;font-weight:600;color:var(--hot);border-top:1px solid var(--line);padding-top:12px">👑 By application only. Spots are exclusive, and every client is accepted through a personal interview with Kat.</p>
-            <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for an interview</a>
-          </article>
+      </div>
+      <div class="coach-cols">
+        <div class="coach-col">
+          <p class="col-label">1:1 with <span>Sami</span></p>
+            <article class="offer glass">
+              <p class="eyebrow">Upgrade · with Sami</p>
+              <h3>VIP 1:1 Coaching</h3>
+              <ul>
+                <li>Individualized strength + nutrition</li>
+                <li>Private communication with Sami</li>
+                <li>Biweekly check-ins</li>
+                <li>Monthly VIP mindset coaching call</li>
+                <li>Programs that flex with life's demands, including travel</li>
+              </ul>
+              <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply with Sami</a>
+            </article>
+            <img class="side-photo" src="images/sami-becoming.jpg" alt="Sami celebrating with both arms raised in a sparkly dress in front of a red curtain">
+            <article class="offer glass">
+              <p class="eyebrow">Upgrade · with Sami</p>
+              <h3>Authentic Frequency</h3>
+              <p>Sami's highest tier of 1:1 support: an add-on to VIP Coaching that goes deeper into energy work, subconscious reprogramming, and the dream life you're building.</p>
+              <ul>
+                <li>Audio access to Sami for life's ups and downs</li>
+                <li>Monthly "Clear the Fear" calls</li>
+                <li>Subconscious reprogramming and energy work</li>
+                <li>Nervous system regulation</li>
+                <li>Dream life visioning with a simple system to track your goals</li>
+              </ul>
+              <p style="font-size:.92rem;font-weight:600;color:var(--hot);border-top:1px solid var(--line);padding-top:12px">👑 By application only. Spots are exclusive, and every client is accepted through a personal interview with Sami.</p>
+              <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for an interview</a>
+            </article>
+        </div>
+        <div class="coach-col">
+          <p class="col-label">1:1 with <span>Kat</span></p>
+            <article class="offer glass">
+              <p class="eyebrow">Upgrade · with Kat</p>
+              <h3>VIP 1:1 Coaching</h3>
+              <ul>
+                <li>Individual strength program, updated as you progress</li>
+                <li>Nutrition guidance built around your goals</li>
+                <li>Private communication with Kat</li>
+                <li>Biweekly check-ins and form feedback</li>
+                <li>Monthly VIP call</li>
+              </ul>
+              <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for 1:1</a>
+            </article>
+            <figure class="yoga">
+              <div class="yoga-grid">
+                <img src="images/kat-train-1.jpg" alt="Kat holding a headstand on a mat in the gym" style="object-position:50% 45%">
+                <img src="images/kat-train-2.jpg" alt="Kat doing a barbell split squat" style="object-position:50% 68%">
+                <img src="images/kat-train-4.jpg" alt="Kat throwing a peace sign in a gym mirror selfie on the mats" style="object-position:38% 55%">
+              </div>
+            </figure>
+            <article class="offer glass">
+              <p class="eyebrow">Add-on</p>
+              <h3>Mindset coaching</h3>
+              <p>Somatic-informed sessions to work through the blocks that keep you from showing up for yourself.</p>
+              <ul>
+                <li>Weekly 1:1 video calls with Kat</li>
+                <li>Somatic-informed nervous system regulation</li>
+                <li>Cognitive behavioral therapy (CBT)-informed coaching</li>
+              </ul>
+              <p style="font-size:.92rem;font-weight:600;color:var(--hot);border-top:1px solid var(--line);padding-top:12px">👑 By application only. Spots are exclusive, and every client is accepted through a personal interview with Kat.</p>
+              <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Apply for an interview</a>
+            </article>
+        </div>
+      </div>
+      <div class="cycle-wrap">
           <article class="offer glass">
             <p class="eyebrow">Add-on · with Sami or Kat</p>
             <h3>Cycle Syncing</h3>
             <p>Training and nutrition matched to each phase of your menstrual cycle, so you work with your hormones instead of against them.</p>
             <a class="btn" href="https://forms.gle/2Jnjf8HEbuJhYrKV6" target="_blank" rel="noopener">Ask about Cycle Syncing</a>
           </article>
-        </div>
       </div>
     </div>
   </section>
@@ -585,7 +599,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="sec-head center">
         <p class="eyebrow">The Confident AF Retreat</p>
         <h2 style="color:#111111">Four days to reset, rise and <span style="color:var(--hot)">level up</span> 👑</h2>
-        <p class="lead">Our annual retreat is a 4-day, all-inclusive mind-body experience with the sisterhood. This year we took over Austin, Texas, with guest speakers, guest trainers and a whole lot of hype.</p>
+        <p class="lead">Our annual retreat is four all-inclusive days of mind and body work with the sisterhood. This year we took over Austin, Texas, with guest speakers, guest trainers and a whole lot of hype.</p>
       </div>
       <div class="retreat-gallery">
         <img data-m="2" src="images/cafretreat-3.jpg" alt="Watercolor journaling on blankets under a tree by the lake" style="object-position:50% 62%">
@@ -596,7 +610,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <img data-m="5" src="images/cafretreat-5.jpg" alt="Sami throwing a peace sign during the gym tour" style="object-position:35% 50%">
       </div>
       <div class="retreat-grid">
-        <div class="glass rcard"><h3>Mind-body action</h3><p>Four days of training, movement and nervous-system work to connect body and mind.</p></div>
+        <div class="glass rcard"><h3>Mind &amp; body action</h3><p>Four days of training, movement and nervous system work to connect body and mind.</p></div>
         <div class="glass rcard"><h3>Guest speakers</h3><p>Talks on discipline and creativity to fuel your next chapter.</p></div>
         <div class="glass rcard"><h3>Guest trainers &amp; gym tour</h3><p>Train with guest coaches and tour local gyms together.</p></div>
         <div class="glass rcard"><h3>All-inclusive</h3><p>Food and stay are included, with a payment plan available.</p></div>
@@ -661,7 +675,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <img class="wh" src="images/walk-8.jpg" alt="Friends toasting with 1st Phorm electrolyte freezer pops by the pool" style="object-position:50% 52%">
       </div>
       <div class="retreat-cta">
-        <a class="btn" href="https://www.instagram.com/samiruess_/" target="_blank" rel="noopener">Join the next walk 👟</a>
+        <a class="btn" href="https://events.sweatpals.com/d4b3e700" target="_blank" rel="noopener">Join the next walk 👟</a>
       </div>
     </div>
   </section>
@@ -689,7 +703,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </div>
       <div class="faq">
         <details class="glass"><summary>How does the group coaching container work?</summary><p>It's a monthly subscription for your body, mind and soul. Every week you get 3 workout sessions plus a yoga session, along with monthly challenges, tons of resources, and live monthly yoga sessions on Zoom. You also get full access to the community page, with active engagement, a message board, and support from all the other women in The Collective.</p></details>
-        <details class="glass"><summary>What's the cancellation policy?</summary><p>The Collective membership is month to month with a 30-day notice cancellation policy.</p></details>
+        <details class="glass"><summary>What's the cancellation policy?</summary><p>The Collective membership is month to month and can be canceled with 30 days’ notice.</p></details>
         <details class="glass"><summary>Do I need gym experience?</summary><p>No. Workouts start where you are, and every move comes with coaching cues. Beginners are welcome.</p></details>
         <details class="glass"><summary>Can I train at home?</summary><p>Yes. Every program has a home version and a gym version, and you can switch between them whenever you like.</p></details>
       </div>
@@ -702,7 +716,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <span class="tagpill">Ready when you are</span>
         <h2>Let's get you strong 👑</h2>
         <p>Join The Collective today, or email us with questions and a coach will get back to you.</p>
-        <a class="btn white" href="https://docs.google.com/forms/d/e/1FAIpQLSebLfa2_qOiATVPP3T1U9VKGv_PjCAhaeTEts5A-kUfsS_dAA/viewform" target="_blank" rel="noopener">$111/mo · Claim your spot ✨</a>
+        <a class="btn white" href="https://buy.stripe.com/eVq3cxfoG7ih5Lsbdg0Fi11" target="_blank" rel="noopener">$111/mo · Claim your spot ✨</a>
         <div class="email">
           <span id="addr">coachingconfidentaf@gmail.com</span>
           <button type="button" id="copy">Copy email</button>
